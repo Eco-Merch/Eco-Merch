@@ -71,3 +71,53 @@ function showSmallImg4(){
     smallImgCol[2].style.border='none';
     smallImgCol[3].style.border='2px solid #64ab05';
 }
+
+function dec(){
+    var element = document.getElementById('ak');
+    var dataID = element.getAttribute('data-id');
+    alert("hello");
+    qty = document.getElementsById('dataID').value;
+    if(qty>1){
+        element.getAttribe('qty').value = qty - 1;
+    }
+}
+function inc(){
+    var element = document.getElementById('ak');
+    var dataID = element.getAttribute('data-id');
+    qty = document.getElementsById('dataID').value;
+    if(qty>1){
+        element.getAttribe('qty').value = qty - 1;
+    }
+}
+
+// jQuery for footer responsiveness
+$(document).ready(function(){
+    var viewportWidth = $(window).width();
+    if($(window).width()<=800){
+        $(".footer-col-1").css({"flex-basis":"100%","text-align":"center"});
+        $(".footer-col-1 ul li").css({"display":"inline","padding":"7px"});
+        $(".footer-col-2").css({"margin-left":"0px","align-content":"fenter","text-align":"center"});
+        $(".footer-col-3").css({"margin-top":"30px","text-align":"center"});
+    }
+ 
+  });
+
+  window.onscroll = function () { scrollFunction() };
+  function scrollFunction() {
+      if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200) {
+          document.getElementById("container").style.padding = "0px";
+          document.getElementById("logo").style.width = "100px";
+          x = document.getElementsByClassName("price-section")[0];
+          x.style.position = "sticky";
+          x.style.top = "130px";
+          // document.getElementsByClassName("price-section")[0].style.position = "sticky";
+          // document.getElementsByClassName("price-section")[0].style.top = "200px";
+      } else {
+          document.getElementById("container").style.padding = "10px 10px";
+          document.getElementById("logo").style.width = "120px";
+          x = document.getElementsByClassName("price-section")[0];
+          x.style.position = "sticky";
+          x.style.top = "164px";
+          
+      }
+  }
