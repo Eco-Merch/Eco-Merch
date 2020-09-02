@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,28 +8,28 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome/css/all.css">
-   <!--  <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
-</head> -->
+    <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
+</head>
 <body>
     <div class="header">
-        <div class="container">
+        <div class="container" id="container">
             <div class="nav-bar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png"></a>
+                    <a href="index.html"><img src="images/logo.png" id="logo" /></a>
                 </div>
-                <nav>
-                   <!--  <input type="checkbox" id="check" />
+                <nav id="myNav">
+                    <input type="checkbox" id="check" onclick="openNav()" />
                     <label for="check" class="checkbtn">
                         <i class="fa fa-bars" aria-hidden="true"></i>
-                    </label> -->
+                    </label>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Articles</a></li>
                         <li><a href="#">Contact</a></li>
                         <!--<li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>-->
-                    </ul>   
+                    </ul>
                 </nav>
                 <div class="cart">
                     <a href="#"><img src="images/bag.png" style="height:40px; width:50px;" /></a>
@@ -37,11 +37,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="nav-container">
+        <div class="nav-container">
             <div class="small-nav-bar">
                 <nav>
-                   <div class="dropdown">
+                    <div class="dropdown">
                         <button class="dropbtn">Reusable Products</button>
                         <div class="dropdown-content">
                             <a href="grocery_bag.html">Grocery Bags</a>
@@ -68,6 +67,7 @@
                 </nav>
             </div>
         </div>
+    </div>
 
 
     <!-----------------------Product Details------------------>
@@ -81,14 +81,14 @@
                 <h3>BagPodz Reusable Shopping Bags – Includes 5 Foldable Bags Inside a Compact Pod with Carry Clip – Super Strong Nylon Reusable Shopping Bags Hold up to 50lbs – Sturdy, Washable and Easy to Use</h3>
                 <p class="price">₹500</p>
                 <div class="qty-container">
-                    <p>Quantaty:</p>
+                    <p>Quantity:</p>
                     <div class="qty-box">
-                        <span class="qty-dec">
+                        <span class="qty-dec" style="cursor:pointer;" onclick="button1()">
                             <i class="fa fa-minus"></i>
                         </span>
-                        <input type="number" name="qty" value="1">
+                        <input type="number" name="qty" disabled value="1">
 
-                        <span class="qty-inc">
+                        <span class="qty-inc" style="cursor:pointer;">
                             <i class="fa fa-plus"></i>
                         </span>
                     </div>
@@ -100,7 +100,24 @@
                         <input type="number" name="qty">
                     </div>
                 </div> -->
+                <p style="margin-top:50px;">
+                    These heavy-duty bags are great to use as daily shopping bags for grocery, shoulder bag or reusable shopping bags.
+                    Made from heavy duty rexin with precise heavyweight stitching, sturdy long handles enable you to carry these foldable bags for shopping easily in your hand or over your shoulder.
+                    These bags are the best eco-friendly alternative to end non-biodegradable plastic and synthetics from our day to day activities. Reduce your carbon footprint and plastic usage with earthy fab reusable shopping bags.
+                    Product with Purpose – At Earthy Fab, each product is handcrafted by a hardworking woman who is able to become self-reliant and support her family. We are supporting livelihood programs to women groups by providing them opportunities to work at their convenient places.
+                    Size – 15X15 Inches (When Folded Width 4.5 Inches Length 7 Inches), Bag Colour – Light Green, Strap Colour - Light Green, Material – Polyester, Strap Type - Attached (Reinforced Stitching)
+                </p>
             </div>
+        </div>
+        <hr />
+        <div class="product-discription">
+            <div class="row">
+                <h2>Product description</h2>
+                <p>
+                    Earthy Fab reusable shopping bags are the ultimate eco-friendly solution for reducing waste from non-degradable plastic grocery bags. Enough to carry all your daily essentials. The handles are reinforced with stress point stitching for durability and to carry a heavy load. Earthy Fab shopping bags are the perfect companion for a variety of activities like a shopping bag, daily use bag, grocery storage, travel, etc. Size large 15X15 inches enough for carrying daily essentials.
+                </p>
+            </div>
+            <hr />
         </div>
     </div>
 
@@ -108,17 +125,21 @@
     <div class="product-container">
         <h2>Related Products</h2>
         <div class="row">
-            <a href="BagPodz-Reusable-Shopping-Bags.html">
+
             <div class="product">
-                <img src="images/reusable/grocery_bag/gb1.jpg" alt="">
-                <div class="text-area">
-                    <h4>BagPodz Reusable Shopping Bags</h4>
-                    <p>₹40 Per Piece</p>
-                    <p>Min. Order 20</p>
-                    <a href="#" class="btn">Add to cart</a>
-                </div>
-            </div></a>
-                
+                <a href="BagPodz-Reusable-Shopping-Bags.html" style="color:black;">
+                    <img src="images/reusable/grocery_bag/gb1.jpg" alt="">
+                    <div class="text-area">
+                        <h4>BagPodz Reusable Shopping Bags</h4>
+                        <p>₹40 Per Piece</p>
+                        <p>Min. Order 20</p>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </a>
+            </div>
+
+
+
             <div class="product">
                 <img src="images/reusable/grocery_bag/gb2.jpg" alt="">
                 <div class="text-area">
@@ -145,7 +166,7 @@
                     <p>Min. Order 20</p>
                     <a href="#" class="btn">Add to cart</a>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 
@@ -186,21 +207,32 @@
 
     <script>
 
-        var slideIndex = 0;
-        showslides();
+        //var slideIndex = 0;
+        //showslides();
 
-        function showslides() {
-            var i;
-            var slides = document.getElementsByClassName("myslides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        //function showslides() {
+        //    var i;
+        //    var slides = document.getElementsByClassName("myslides");
+        //    for (i = 0; i < slides.length; i++) {
+        //        slides[i].style.display = "none";
+        //    }
+        //    slideIndex++;
+        //    if (slideIndex > slides.length) {
+        //        slideIndex = 1
+        //    }
+        //    slides[slideIndex - 1].style.display = "block";
+        //    setTimeout(showslides, 5000); // Change image every 2 seconds
+        //}
+
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("container").style.padding = "0px";
+                document.getElementById("logo").style.width = "100px";
+            } else {
+                document.getElementById("container").style.padding = "30px 10px";
+                document.getElementById("logo").style.width = "130px";
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showslides, 5000); // Change image every 2 seconds
         }
 
 
