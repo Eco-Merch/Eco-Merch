@@ -74,8 +74,22 @@
 
     <div class="product-container product-details">
         <div class="row">
+        	<div class="small-img-container">
+	         	<div class="small-img-col">
+	          		<img src="images/reusable/grocery_bag/gb2.jpg" class="small-img">
+	            </div>
+	            <div class="small-img-col">
+	            	<img src="images/reusable/grocery_bag/gb3.jpg" class="small-img">
+	            </div>
+	            <div class="small-img-col">
+	            	<img src="images/reusable/grocery_bag/gb4.jpg" class="small-img">
+	            </div>
+	            <div class="small-img-col">
+	            	<img src="images/reusable/grocery_bag/gb5.jpg" class="small-img">
+	            </div>
+        	</div>
             <div class="col-2">
-                <img src="images/reusable/grocery_bag/gb1a.jpg" alt="BagPodz Reusable Shopping Bags">
+                <img src="images/reusable/grocery_bag/gb1a.jpg" alt="BagPodz Reusable Shopping Bags" id="productImg">
             </div>
             <div class="col-2">
                 <h3>BagPodz Reusable Shopping Bags – Includes 5 Foldable Bags Inside a Compact Pod with Carry Clip – Super Strong Nylon Reusable Shopping Bags Hold up to 50lbs – Sturdy, Washable and Easy to Use</h3>
@@ -230,12 +244,45 @@
                 document.getElementById("container").style.padding = "0px";
                 document.getElementById("logo").style.width = "100px";
             } else {
-                document.getElementById("container").style.padding = "30px 10px";
-                document.getElementById("logo").style.width = "130px";
+                document.getElementById("container").style.padding = "10px 10px";
+                document.getElementById("logo").style.width = "110px";
             }
         }
 
-
+    </script>
+    <!------------js for product small img-------- -->
+    <script>
+    	var productImg = document.getElementById("productImg");
+    	var smallImg = document.getElementsByClassName("small-img");
+    	var smallImgCol = document.getElementsByClassName("small-img-col")
+    	smallImg[0].onmouseover = function(){
+    		productImg.src = smallImg[0].src;
+    		smallImgCol[0].style.border='2px solid #64ab05';
+    		smallImgCol[1].style.border='none';
+    		smallImgCol[2].style.border='none';
+    		smallImgCol[3].style.border='none';
+    	}
+    	smallImg[1].onmouseover = function(){
+    		productImg.src = smallImg[1].src;
+    		smallImgCol[0].style.border='none';
+    		smallImgCol[1].style.border='2px solid #64ab05';
+    		smallImgCol[2].style.border='none';
+    		smallImgCol[3].style.border='none';
+    	}
+    	smallImg[2].onmouseover = function(){
+    		productImg.src = smallImg[2].src;
+    		smallImgCol[0].style.border='none';
+    		smallImgCol[1].style.border='none';
+    		smallImgCol[2].style.border='2px solid #64ab05';
+    		smallImgCol[3].style.border='none';
+    	}
+    	smallImg[3].onmouseover = function(){
+    		productImg.src = smallImg[3].src;
+    		smallImgCol[0].style.border='none';
+    		smallImgCol[1].style.border='none';
+    		smallImgCol[2].style.border='none';
+    		smallImgCol[3].style.border='2px solid #64ab05';
+    	}
     </script>
 </body>
 </html>
