@@ -37,6 +37,7 @@
                 </div>
             </div>
         </div>
+<!-- ---------------------small-nav---------------------------------------------------->
         <div class="nav-container">
             <div class="small-nav-bar">
                 <nav>
@@ -216,7 +217,8 @@
                 </div>
                 <div class="footer-col-2">
                     <img src="images/logo.png" />
-                    <p>We are here to provide you the hand to be the superhero the world wants you to be.</p>
+                    <!-- <p>We are here to provide you the hand to be the superhero, the world wants you to be.</p> -->
+                    <p>We are here to provide you the hand to be the superhero, the world wants you to be.</p>
                 </div>
                 <div class="footer-col-3">
                     <h3>Follow our socials</h3>
@@ -253,14 +255,14 @@
             setTimeout(showslides, 5000); // Change image every 5 seconds
         }
 
-        window.onscroll = function() {scrollFunction()};
+        window.onscroll = function () { scrollFunction() };
         function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.getElementById("container").style.padding = "0px";
                 document.getElementById("logo").style.width = "100px";
             } else {
-                document.getElementById("container").style.padding = "30px 10px";
-               document.getElementById("logo").style.width = "130px";
+                document.getElementById("container").style.padding = "20px 10px";
+                document.getElementById("logo").style.width = "120px";
             }
         }
 

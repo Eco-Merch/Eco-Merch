@@ -11,14 +11,14 @@
     <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <div class="container" id="container">
             <div class="nav-bar">
                 <div class="logo">
                     <a href="index.html"><img src="images/logo.png" id="logo" /></a>
                 </div>
                 <nav id="myNav">
-                    <input type="checkbox" id="check" onclick="openNav()" />
+                    <input type="checkbox" id="check" />
                     <label for="check" class="checkbtn">
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </label>
@@ -74,20 +74,20 @@
 
     <div class="product-container product-details">
         <div class="row">
-        	<div class="small-img-container">
-	         	<div class="small-img-col">
-	          		<img src="images/reusable/grocery_bag/gb2.jpg" class="small-img">
-	            </div>
-	            <div class="small-img-col">
-	            	<img src="images/reusable/grocery_bag/gb3.jpg" class="small-img">
-	            </div>
-	            <div class="small-img-col">
-	            	<img src="images/reusable/grocery_bag/gb4.jpg" class="small-img">
-	            </div>
-	            <div class="small-img-col">
-	            	<img src="images/reusable/grocery_bag/gb5.jpg" class="small-img">
-	            </div>
-        	</div>
+            <div class="small-img-container">
+                <div class="small-img-col">
+                     <img src="images/reusable/grocery_bag/gb2.jpg" class="small-img">
+               </div>
+               <div class="small-img-col">
+                   <img src="images/reusable/grocery_bag/gb3.jpg" class="small-img">
+               </div>
+               <div class="small-img-col">
+                   <img src="images/reusable/grocery_bag/gb4.jpg" class="small-img">
+               </div>
+               <div class="small-img-col">
+                   <img src="images/reusable/grocery_bag/gb5.jpg" class="small-img">
+               </div>
+           </div>
             <div class="col-2">
                 <img src="images/reusable/grocery_bag/gb1a.jpg" alt="BagPodz Reusable Shopping Bags" id="productImg">
             </div>
@@ -106,15 +106,25 @@
                             <i class="fa fa-plus"></i>
                         </span>
                     </div>
+                   
+                   
                 </div>
-                <!-- <div class="qty-container">
-                    <span class="next"></span>
-                    <span class="prev"></span>
-                    <div class="qty-box">
-                        <input type="number" name="qty">
+                <div class="tags">
+                    <div class="tag-3">
+                        <img src="images/growth.png" style="width:40px;" />
+                        <p style="text-align:center;">100%<br> Eco Friendly</p>                  
+                    </div>                                        
+                    <div class="tag-3">
+                        <img src="images/no-handshake.png" style="width:40px;" />
+                        <p style="text-align:center;">No Contact<br> Delivery</p>
+                    </div>                                        
+                    <div class="tag-3">
+                        <img src="images/return-box.png" style="width:40px;" />
+                        <p style="text-align:center;">Returns<br> Policy</p>
                     </div>
-                </div> -->
-                <p style="margin-top:50px;">
+                </div>
+              
+                <p style="margin-top:20px;">
                     These heavy-duty bags are great to use as daily shopping bags for grocery, shoulder bag or reusable shopping bags.
                     Made from heavy duty rexin with precise heavyweight stitching, sturdy long handles enable you to carry these foldable bags for shopping easily in your hand or over your shoulder.
                     These bags are the best eco-friendly alternative to end non-biodegradable plastic and synthetics from our day to day activities. Reduce your carbon footprint and plastic usage with earthy fab reusable shopping bags.
@@ -240,49 +250,50 @@
 
         window.onscroll = function () { scrollFunction() };
         function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.getElementById("container").style.padding = "0px";
                 document.getElementById("logo").style.width = "100px";
             } else {
-                document.getElementById("container").style.padding = "10px 10px";
-                document.getElementById("logo").style.width = "110px";
+                document.getElementById("container").style.padding = "20px 10px";
+                document.getElementById("logo").style.width = "130px";
             }
         }
 
+
     </script>
-    <!------------js for product small img-------- -->
-    <script>
-    	var productImg = document.getElementById("productImg");
-    	var smallImg = document.getElementsByClassName("small-img");
-    	var smallImgCol = document.getElementsByClassName("small-img-col")
-    	smallImg[0].onmouseover = function(){
-    		productImg.src = smallImg[0].src;
-    		smallImgCol[0].style.border='2px solid #64ab05';
-    		smallImgCol[1].style.border='none';
-    		smallImgCol[2].style.border='none';
-    		smallImgCol[3].style.border='none';
-    	}
-    	smallImg[1].onmouseover = function(){
-    		productImg.src = smallImg[1].src;
-    		smallImgCol[0].style.border='none';
-    		smallImgCol[1].style.border='2px solid #64ab05';
-    		smallImgCol[2].style.border='none';
-    		smallImgCol[3].style.border='none';
-    	}
-    	smallImg[2].onmouseover = function(){
-    		productImg.src = smallImg[2].src;
-    		smallImgCol[0].style.border='none';
-    		smallImgCol[1].style.border='none';
-    		smallImgCol[2].style.border='2px solid #64ab05';
-    		smallImgCol[3].style.border='none';
-    	}
-    	smallImg[3].onmouseover = function(){
-    		productImg.src = smallImg[3].src;
-    		smallImgCol[0].style.border='none';
-    		smallImgCol[1].style.border='none';
-    		smallImgCol[2].style.border='none';
-    		smallImgCol[3].style.border='2px solid #64ab05';
-    	}
-    </script>
+
+<script>
+    var productImg = document.getElementById("productImg");
+    var smallImg = document.getElementsByClassName("small-img");
+    var smallImgCol = document.getElementsByClassName("small-img-col")
+    smallImg[0].onmouseover = function(){
+        productImg.src = smallImg[0].src;
+        smallImgCol[0].style.border='2px solid #64ab05';
+        smallImgCol[1].style.border='none';
+        smallImgCol[2].style.border='none';
+        smallImgCol[3].style.border='none';
+    }
+    smallImg[1].onmouseover = function(){
+        productImg.src = smallImg[1].src;
+        smallImgCol[0].style.border='none';
+        smallImgCol[1].style.border='2px solid #64ab05';
+        smallImgCol[2].style.border='none';
+        smallImgCol[3].style.border='none';
+    }
+    smallImg[2].onmouseover = function(){
+        productImg.src = smallImg[2].src;
+        smallImgCol[0].style.border='none';
+        smallImgCol[1].style.border='none';
+        smallImgCol[2].style.border='2px solid #64ab05';
+        smallImgCol[3].style.border='none';
+    }
+    smallImg[3].onmouseover = function(){
+        productImg.src = smallImg[3].src;
+        smallImgCol[0].style.border='none';
+        smallImgCol[1].style.border='none';
+        smallImgCol[2].style.border='none';
+        smallImgCol[3].style.border='2px solid #64ab05';
+    }
+</script>
 </body>
 </html>
