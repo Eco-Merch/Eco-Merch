@@ -508,6 +508,7 @@ ul {
     display: inline-flex;
     text-align: left;
     justify-content: center;
+    /* justify-content: center; */
     /* border: 5px solid black; */
 }
 .product-details .col-2{
@@ -659,6 +660,7 @@ ul {
 .qty-box{
     display: inline-block;
     border: 1px solid #676767;
+    /* max-width: 180px; */
     width: 120px;
     background: #64ab05;
     vertical-align: middle;
@@ -675,7 +677,8 @@ ul {
     border-left: 1px solid #676767;
     color: #4b4b4b;
     outline: none;
-    cursor:not-allowed;
+    padding: 4px;
+    /* cursor:not-allowed; */
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{
@@ -688,6 +691,7 @@ input[type=number]::-webkit-outer-spin-button{
     margin: 0px 9px;
     /* margin-left: 13px; */
     outline: none;
+    cursor: pointer;
 }
 .qty-inc{ 
     text-align: center;
@@ -708,9 +712,52 @@ input[type=number]::-webkit-outer-spin-button{
     flex-basis:30%;
     margin-right:50px;
 }
+/* -----------------------------CART and BUY Now----------------------------- */
+#cart-buy-container{
+    max-width: 400px;
+    /* text-align: center; */
+    /* border: 1px solid black; */
+}
+#cart-btn, #buy-btn{
+    min-width: 47%;
+    border:none;
+    background-color: #64ab05;
+    padding: 10px 15px; 
+    outline:none;
+    cursor: pointer;
+}
+#cart-btn{
+    margin-right: 10px;
+}
+#cart-buy-container .img{
+    margin-right: 8px; 
+}
+/* -------------------------product description--------------------- */
+.specs-table table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+    line-height: 1.428571429;
+    /* display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit; */
+    /* border: 1px solid black; */
+    /* border-collapse: collapse; */
+}
 
-
-
+.specs-table table td{
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+}
+.specs-table table tr:last-child{
+    /* border-bottom: 1px solid black; */
+}
+.specs-table table tr td:first-child{
+    background-color: rgba(220, 220, 220, 0.21); 
+}
+thead tr td{
+    background-color: black;
+}
 @media (max-width: 800px) {
     .nav-container nav {
         display:block;
