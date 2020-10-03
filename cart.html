@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body bgcolor="#f1f6f2">
     <div class="header" id="header">
         <div class="container" id="container">
             <div class="nav-bar">
@@ -27,8 +27,7 @@
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Articles</a></li>
                         <li><a href="#">Contact</a></li>
-                        <!--<li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>-->
+                        
                     </ul>
                 </nav>
                 <div class="cart">
@@ -110,7 +109,7 @@
                                 <div class="qty-container">
                                     <div class="qty-box">
                                         <span class="qty-dec" onclick="button1()">
-                                            <i class="fa fa-minus"></i>
+                                            <i class="fa fa-minus" ></i>
                                         </span>
                                         <input type="number" name="qty" value="1">
 
@@ -121,7 +120,7 @@
                                 </div>
                                 <div class="remove-item">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    <span>Remove</span>
+                                    <span>REMOVE</span>
                                 </div>
                             </div>
                         </td>
@@ -205,7 +204,7 @@
                                 </div>
                                 <div class="remove-item">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    <span>Remove</span>
+                                    <span>REMOVE</span>
                                 </div>
                             </div>
                         </td>
@@ -289,7 +288,7 @@
                                 </div>
                                 <div class="remove-item">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                    <span>Remove</span>
+                                    <span>REMOVE</span>
                                 </div>
                             </div>
                         </td>
@@ -348,13 +347,9 @@
                     <span><i class="fas fa-rupee-sign"></i>5,515</span>
                 </div>
             </div>
-
-            
         </div>
     </div>
    
-
-
     <!--------------------------------FOOTER----------------------------------------------->
 
     <div class="footer">
@@ -418,12 +413,21 @@
 
         window.onscroll = function () { scrollFunction() };
         function scrollFunction() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200) {
                 document.getElementById("container").style.padding = "0px";
                 document.getElementById("logo").style.width = "100px";
+                x = document.getElementsByClassName("price-section")[0];
+                x.style.position = "sticky";
+                x.style.top = "130px";
+                // document.getElementsByClassName("price-section")[0].style.position = "sticky";
+                // document.getElementsByClassName("price-section")[0].style.top = "200px";
             } else {
                 document.getElementById("container").style.padding = "10px 10px";
                 document.getElementById("logo").style.width = "120px";
+                x = document.getElementsByClassName("price-section")[0];
+                x.style.position = "sticky";
+                x.style.top = "164px";
+                
             }
         }
 

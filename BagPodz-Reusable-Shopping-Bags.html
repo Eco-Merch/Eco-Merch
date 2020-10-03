@@ -97,18 +97,16 @@
                 <div class="qty-container">
                     <p>Quantity:</p>
                     <div class="qty-box">
-                        <span class="qty-dec" style="cursor:pointer;" onclick="button1()">
+                        <span class="qty-dec" onclick="button1()">
                             <i class="fa fa-minus"></i>
                         </span>
-                        <input type="number" name="qty" disabled value="1">
-
-                        <span class="qty-inc" style="cursor:pointer;">
+                        <input type="number" name="qty" value="1">
+                        <span class="qty-inc">
                             <i class="fa fa-plus"></i>
                         </span>
                     </div>
-                   
-                   
                 </div>
+
                 <div class="tags">
                     <div class="tag-3">
                         <img src="images/growth.png" style="width:40px;" />
@@ -124,17 +122,70 @@
                     </div>
                 </div>
               
-                <p style="margin-top:20px;">
+                <!-- <p style="margin-top:20px;">
                     These heavy-duty bags are great to use as daily shopping bags for grocery, shoulder bag or reusable shopping bags.
                     Made from heavy duty rexin with precise heavyweight stitching, sturdy long handles enable you to carry these foldable bags for shopping easily in your hand or over your shoulder.
                     These bags are the best eco-friendly alternative to end non-biodegradable plastic and synthetics from our day to day activities. Reduce your carbon footprint and plastic usage with earthy fab reusable shopping bags.
                     Product with Purpose – At Earthy Fab, each product is handcrafted by a hardworking woman who is able to become self-reliant and support her family. We are supporting livelihood programs to women groups by providing them opportunities to work at their convenient places.
                     Size – 15X15 Inches (When Folded Width 4.5 Inches Length 7 Inches), Bag Colour – Light Green, Strap Colour - Light Green, Material – Polyester, Strap Type - Attached (Reinforced Stitching)
-                </p>
+                </p> -->
+                <!-- -----------------CART and BUY--------------- -->
+                <div id="cart-buy-container">
+                    <button id="cart-btn">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        ADD TO CART
+                    </button>
+                    <button id="buy-btn">
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        BUY NOW
+                    </button>
+                </div>
             </div>
         </div>
         <hr />
-        <div class="product-discription">
+            <!-- ---------------------Product description------------ -->
+       <div class="product-description">
+            <div class="specs-table">
+                <table>
+                    <thead>
+                        <th>Specification</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Material Name</td>
+                            <td>BagPodz Reusable Bags</td>
+                        </tr>
+                        <tr>
+                            <td>Weight Carrying Capacity</td>
+                            <td>50 lbs</td>
+                        </tr>
+                        <tr>
+                            <td>Style</td>
+                            <td>Square</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>12 x 12 x 5 inches</td>
+                        </tr>
+                        <tr>
+                            <td>Handle Size</td>
+                            <td>4H inches</td>
+                        </tr>
+                        <tr>
+                            <td>Product Color</td>
+                            <td>Multiple options</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="description">
+                <p>Product description</p>
+                <p>
+                    Earthy Fab reusable shopping bags are the ultimate eco-friendly solution for reducing waste from non-degradable plastic grocery bags. Enough to carry all your daily essentials. The handles are reinforced with stress point stitching for durability and to carry a heavy load. Earthy Fab shopping bags are the perfect companion for a variety of activities like a shopping bag, daily use bag, grocery storage, travel, etc. Size large 15X15 inches enough for carrying daily essentials.
+                </p>
+            </div>
+       </div>
+        <!-- <div class="product-discription">
             <div class="row">
                 <h2>Product description</h2>
                 <p style="text-align: center;">
@@ -142,13 +193,13 @@
                 </p>
             </div>
             <hr />
-        </div>
+        </div> -->
     </div>
 
     <!----------------------Grocery Products------------------------>
     <div class="product-container">
         <h2>Related Products</h2>
-        <div class="row">
+        <div class="row product-list">
 
             <div class="product">
                 <a href="BagPodz-Reusable-Shopping-Bags.html" style="color:black;">
