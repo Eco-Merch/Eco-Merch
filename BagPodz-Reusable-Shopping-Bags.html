@@ -97,12 +97,12 @@
                 <div class="qty-container">
                     <p>Quantity:</p>
                     <div class="qty-box">
-                        <span class="qty-dec" onclick="button1()">
+                        <span class="qty-dec" onclick="dec()">
                             <i class="fa fa-minus"></i>
                         </span>
                         <input type="number" name="qty" value="1">
                         <span class="qty-inc">
-                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-plus" onclick="inc()"></i>
                         </span>
                     </div>
                 </div>
@@ -283,9 +283,19 @@
             <hr />
             <p class="copyright">Copyright 2020 - Datta Meghe College of Engineering</p>
         </div>
-
     </div>
-
+<!-- ---------------------js for qty increament and decreament----------------------- -->
+<script>
+    function dec(){
+        qty = document.getElementsByName("qty")[0].value;
+        if(qty>1){
+            document.getElementsByName("qty")[0].value = qty - 1;
+        }
+    }
+    function inc(){
+        qty = document.getElementsByName("qty")[0].value;
+        document.getElementsByName("qty")[0].value = parseInt(qty) + parseInt(1);
+    }
 </script>
 <script src="js/script.js"></script>
 </body>

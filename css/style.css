@@ -4,8 +4,13 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+@font-face{
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-Regular.ttf)
+}
 body{
     font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .header {
@@ -72,15 +77,16 @@ nav {
 
 .nav-container {
     display: flex;
-    text-align: center;
+    /* text-align: center; */
     background-color: #64ab05;
     max-width: 1520px;
-    margin: auto;
+    /* margin: auto; */
     height: 40px;
-    position: sticky;
-    top: 65px;
+    /* position: sticky;
+    top: 65px; */
     z-index: 1; 
     flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
     transition:0.5s;
     justify-content: space-around;
 }
