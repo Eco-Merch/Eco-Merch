@@ -97,6 +97,7 @@ nav {
     flex-basis:30%;
     color: white;
     padding:10px; 
+    margin: 0px;
     min-width:250px;    
     font-size: 15px;
     border: none;
@@ -115,7 +116,7 @@ nav {
     text-align:center;
     background-color: #64ab05;
     min-width: 250px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
 }
 
@@ -128,7 +129,7 @@ nav {
 
         .dropdown-content a:hover {
             background-color: green;
-            transition: 0.5s;
+            transition: 0.25s;
         }
 
 
@@ -223,7 +224,7 @@ nav {
     padding-right: 25px;
 }
 
-.small-containerh1 {
+.small-container h1 {
     margin-top: 50px;
     font-family: 'Alata', sans-serif;
 }
@@ -264,7 +265,6 @@ nav {
     min-width: 200px;
     margin-bottom: 50px;
     cursor: pointer;
-    /*transition:transform 0.5s;*/
 }
 
     .col-4 img {
@@ -291,7 +291,6 @@ nav {
 }
 
 .col-4:hover {
-    /*transform:translateY(-10px);*/
     box-shadow: 5px 10px 18px #888888;
 }
 
@@ -349,11 +348,11 @@ nav {
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0px 20px;
-    widows: 1520px;
+    width: 1520px;
     max-width: 100%;
 }
     .footer p {
-        color: #8a8a8a;
+        color: #686868	;
         width: 100%;
         margin-top: 20px;
         font-size: 15px;
@@ -373,6 +372,7 @@ footer .row{
 }
 
 .footer-col-1 p{
+    color: #686868	;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -393,10 +393,9 @@ footer .row{
 }
 
 .footer-col-2 {
-    /* margin-left: 60px; */
     align-content: center;
     text-align: center;
-    margin-right: 20px;
+    margin-top: 30px;
 }
 
     .footer-col-2 img {
@@ -490,17 +489,24 @@ footer .row{
 
 /* -------------------Grocery Products---------------- */
 .product-container{
+    /* display: flex; */
     max-width: 1080px;
     margin: auto;
     font-family: 'Alata', sans-serif;
     text-align: left;
     margin-top: 40px;
+
+}
+
+.product-container h2{
+    margin-left: 30px;
 }
 .product-list{
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 .product{
-    flex-basis: 25%;
+    flex-basis: 25%;    
     min-width: 240px;
     margin: 20px 0px;
     padding: 10px;
@@ -515,7 +521,7 @@ footer .row{
 }
 .product h4{
     padding: 10px;
-    line-height: 10px;
+    line-height: 17px;
 }
 .product p{
     padding: 10px;
@@ -743,11 +749,199 @@ input[type=number]::-webkit-outer-spin-button{
     margin-right:50px;
 }
 
+
+/* -----------------------------CART and BUY Now----------------------------- */
+#cart-buy-container{
+    max-width: 400px;
+    /* text-align: center; */
+    /* border: 1px solid black; */
+}
+#cart-btn, #buy-btn{
+    min-width: 47%;
+    border:none;
+    background-color: #64ab05;
+    padding: 10px 15px; 
+    outline:none;
+    cursor: pointer;
+}
+#cart-btn{
+    margin-right: 10px;
+}
+#cart-buy-container .img{
+    margin-right: 8px; 
+}
+/* -------------------------product description | Specificatin--------------------- */
+.specs-table table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+    line-height: 1.428571429;
+    /* display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit; */
+    /* border: 1px solid black; */
+    /* border-collapse: collapse; */
+}
+
+.specs-table table td{
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+}
+.specs-table table th{
+    padding: 10px;
+}
+.specs-table table tr td:first-child{
+    background-color: rgba(220, 220, 220, 0.21); 
+}
+.title{
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+/* -------------------------product description | Description--------------------------- */
+.product-description{
+    padding: 10px;
+}
+.product-description  p:first-child{
+    padding: 10px 0;
+}
+
+
+/* ----------------------------CART PAGE---------------------- */
+.cart-container{
+    width: 85%;
+    display: flex;
+    margin: 20px auto;
+    border-color: #ddd;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+}
+.items-section{
+    flex-basis: 70%;
+    background-color: #fff;
+    border-color: #ddd;
+    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    /* box-shadow: rgba(33, 33, 34, 0.2) 0px 1px 9px 0px; */
+    /* border: 1px solid blue; */
+}
+.price-section{
+    flex-basis: 28.5%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    background-color: #fff;
+    height: 240px;
+    position: sticky;
+    top: 185px;
+    right: 0;
+    
+}
+.count-cart-items{
+    padding: 10px 15px;
+    /* background-color: lightgrey; */
+    /* border-bottom: 1px solid lightgrey; */
+}
+.items-row{
+    border-top: 1px solid #f0f0f0!important;
+}
+/* --------------------------ITEM SECTION---------------------------- */
+/* --------------------------Table | Item column---------------------- */
+#cart-items{
+    /* border: 1px solid black; */
+    /* width: 80%; */
+    border-collapse: collapse;
+    margin: auto;
+}
+#cart-items th{
+    text-align: left;
+    /* background-color: #64ab05; */
+    border-color: #ddd;
+    border-top: 1px solid #f0f0f0!important;
+    padding: 5px 15px;
+    /* color: white; */
+}
+#cart-items td{
+    padding: 20px 15px;
+    vertical-align: top;
+    text-align: left;
+}
+.img-specs{
+    display: inline-flex;
+    margin-top: 10px;
+    /* border: 1px solid black; */
+    /* align-items: center; */
+}
+.item-img{
+    flex-basis:  30%;
+}
+.item-img img{
+    width: 100%;
+}
+.item-specs{
+    /* border: 1px solid black; */
+    flex-basis:  60%;
+    padding-left: 10px;
+}
+/* --------------------------Quantity column----------------- */
+.remove-item{
+    margin-top: 30px;
+    cursor: pointer;
+    vertical-align: top;
+}
+#cart-items td:nth-child(2){
+    /* vertical-align: middle ; */
+}
+/* --------------------------Price column------------------- */
+/* .price-col .price-txt{
+    text-align: left;
+}*/
+.gstPrice-det{
+    margin: 5px 0px;
+    padding: 7px 11px 5px;
+    /* color: red; */
+    display: table;
+    /* width: 224px; */
+    width: 100%;
+}
+.gstPrice-det .row-4{
+    display: table-row;
+}
+.price-txt{
+
+}
+.price-val{
+    display: table-cell;
+    text-align: right;
+}
+ 
+/* --------------------------PRICE SECTION---------------------------- */
+.price-section .title{
+    padding: 10px 15px;
+    border-bottom: 1px solid lightgrey;
+}
+.price-detail{
+    padding: 0 20px;
+    /* border: 1px solid red; */
+}
+.subtotal, .dlvry-charges, .total-amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+
 /* ----------------------------Login/signup----------------- */
 
+.login-header{
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+
+.login-header .nav-bar{
+    margin-top: 15px;
+}
 section{
     font-family: 'Alata', sans-serif;
-    background: #f6f5f7;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -803,7 +997,7 @@ section{
      width: 768px;
      max-width: 100%;
      min-height: 480px;
-     box-shadow: 5px 10px 18px #888888;
+     box-shadow: 5px 10px 18px lightgreen;
  }
 
  .form-container form{
@@ -1020,7 +1214,99 @@ section{
 
 }
 
+.overflow{
+    overflow: hidden;
+}
 
+/* -----------------------------------Contact us---------------------------------------- */
+.contact-container{
+    display: flex;
+    text-align: center;
+    max-width: 1520px;
+    margin: auto;
+    max-height: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+    transition:0.5s;
+    align-items: left;
+    justify-content: center;
+}
+
+.form input[type=text]{
+    width: 100%;
+    height: 40px;
+    font-size: medium;
+    border-bottom: 2px solid #64ab05;
+    outline: none;
+}
+.form{
+    /* margin-top: 100px; */
+    /* margin-bottom: 100px; */
+    max-width: 500px;
+    padding: 0 25px 25px 25px;
+}
+
+.form input[type=email]{
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    font-size: medium;
+    border-bottom: 2px solid #64ab05;
+    outline: none;
+}
+
+textarea{
+    margin-top: 5px;
+    width: 100%;
+    height: 100px;
+    font-size: medium;
+    border-bottom: 2px solid #64ab05;
+    outline: none;
+}
+
+.form button[type=submit]{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: medium;
+    color: #fff;
+    background-color: #64ab05;
+    border: none;
+}
+
+.form button[type=submit]:hover{
+    background-color: green;
+    transition: 0.7s;
+}
+
+.contact-container .col-2{
+    text-align: left;
+    flex-basis: 60%;
+    /* min-width: 250px; */
+    align-content: left;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.contact-container p{
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 25px 0 10px;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.contact-container h1{
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.address{
+    max-width: 600px;
+}
 
 
 
@@ -1045,6 +1331,9 @@ section{
 
     .dropbtn{
         min-width:100px;
+        margin: 0px;
+        padding-right: 0px;
+        padding-left: 2px;
     }
 
     .dropdown-content {
@@ -1052,9 +1341,13 @@ section{
     }
 
     .header .container {
-        padding: 0px;
+        padding: 10px 10px;
         position: sticky;
         top: 0;
+    }
+
+    .header .logo{
+        width: 120px;
     }
 
     .cart img {
@@ -1073,12 +1366,24 @@ section{
         width: 100%;
         height: 800px;
         background-color: greenyellow;
-        top: 116px;
+        top: 105px;
         left: -100%;
         text-align: center;
         transition: all .5s;
     }
 
+    .login-header ul {
+        position: fixed;
+        overflow:hidden;
+        padding:90px 0px;
+        width: 100%;
+        height: 800px;
+        background-color: greenyellow;
+        top: 100px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
     nav ul li {
         display: block;
         margin-bottom: 20px;
@@ -1088,7 +1393,6 @@ section{
     #check:checked ~ ul {
         left: 0;
     }
-
     .image img {
         height: 300px;
     }
@@ -1132,6 +1436,8 @@ section{
         margin-top: 13px;
         padding-top: 0px;
     }
-    
+    .contact-container{
+        padding: 0px;
+    }
     
 }
