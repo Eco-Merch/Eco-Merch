@@ -16,6 +16,6 @@
 
     //Car object
     $cart = new Cart($db);
-    // print_r($cart->getCartId($product->getTableData('cart','asdf')));
+    
 
 ?>

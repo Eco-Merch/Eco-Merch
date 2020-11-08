@@ -37,7 +37,7 @@
     
    <?php
         //-----------------------Product Details------------------------------------------
-        include('Template/_BagPodz-Reusable-Shopping-Bags.php');
+        include('Template/_product_details.php');
 
         //----------------------Grocery Products | Related Products------------------------
         include('Template/_related-products.php');

@@ -13,7 +13,7 @@ class Product
     //fetch product data
     public function getProductData($table_name){
         $result = $this->db->con->query("SELECT * FROM {$table_name}");
-        print_r($result);
+        
         $resultArray = array();
 
     //fetch product data one by one
@@ -23,7 +23,8 @@ class Product
         return $resultArray;
     }
 
-    public function getTableData($table_name,$item_category){
+    //to check item is present in cart table
+    public function getCartTableData($table_name,$item_category){
     $result = $this->db->con->query("SELECT * FROM {$table_name} WHERE item_category='{$item_category}'");
 
         $resultArray = array();

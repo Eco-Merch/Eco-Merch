@@ -2,6 +2,13 @@
 $item_id = $_GET['item_id'] ?? 1;
 foreach($product->getProductData('grocery_bags') as $item):
     if($item['item_id'] == $item_id):
+
+    //add item to cart
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        //cal addToCart method
+        $cart->addToCart($_POST['user_id'],$_POST['item_id'],'grocery_bags');
+        echo '<script type="text/javascript">showAlert("cart","Item added to Cart");</script>';
+    }
 ?>
 
 <div class="product-container product-details">
@@ -63,14 +70,17 @@ foreach($product->getProductData('grocery_bags') as $item):
                 </p> -->
                 <!-- -----------------CART and BUY--------------- -->
                 <div id="cart-buy-container">
+                    <form method="POST">
+                    <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
+                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                     <?php
-                        if(in_array($item['item_id'],$cart->getCartId($product->getTableData('cart','grocery_bags')) ?? [])){
+                        if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart','grocery_bags')) ?? [])){
                             echo '<button class="disable-btn cart-btn">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             In Cart
                         </button>';
                         }else{
-                            echo '<button class="cart-btn">
+                            echo '<button class="cart-btn" name="add_cart_submit" type=submit>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             ADD TO CART
                         </button>';
@@ -84,6 +94,7 @@ foreach($product->getProductData('grocery_bags') as $item):
                         <i class="fa fa-bolt" aria-hidden="true"></i>
                         BUY NOW
                     </button>
+                    </form>
                 </div>
             </div>
         </div>

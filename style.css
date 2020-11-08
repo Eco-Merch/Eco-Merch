@@ -995,8 +995,10 @@ input[type=number]::-webkit-outer-spin-button{
     scroll-margin-top: 10px;
 }
 
+  
 #place-order-btn{
-    width: 20%;
+    width:30%;
+    color:black;
     float:right; 
     margin:12px;
     border:none;

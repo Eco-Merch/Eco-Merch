@@ -1,6 +1,7 @@
 <?php
 ob_start();
 include('header.php');
+
 ?>
 <!-- ---------------------small-nav---------------------------------------------------->
         <div class="nav-container">
@@ -59,7 +60,6 @@ include('header.php');
         include('Template/_featured-categories.php');
 
         // -----------------------Features-Products-----------------------------
-        include('scripts.php'); //Alert box
         include('Template/_featured-products.php');
     ?>
 

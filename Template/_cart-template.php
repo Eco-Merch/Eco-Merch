@@ -1,9 +1,10 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // echo $_POST['remove_item_submit'];
-        print_r($_POST);
+        if(isset($_POST['remove_item_submit'])){
             $deleted_item = $cart->removeCartItem($_POST['item_id']);
-            echo "Hello";
+            }
+        
     }
     $count = count($product->getProductData('cart'));
 
@@ -74,7 +75,8 @@
                                         </div>
                                     </div>
                                     <form method="post">
-                                        <div class="remove-item"  name="remove_item_submit" onclick="this.parentNode.submit();">
+                                        <div class="remove-item" onclick="this.parentNode.submit();">
+                                            <input type="hidden" name="remove_item_submit" />
                                             <input type="hidden" name="item_id" value="<?php echo $item["item_id"];?>"/>
                                             <i class="fa fa-trash-o" aria-hidden="true"></i >
                                             <span>REMOVE</span>
@@ -129,9 +131,12 @@
             
             </div>
             <div id="place-order">
+                <form method="POST" action="./checkout.php">
+                    <input type="hidden" name="user_id" value="<?php echo 1; ?>"/>
                     <button id="place-order-btn">
                         PLACE ORDER
                     </button>
+                </form>
             </div>
         </div>
             

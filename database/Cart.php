@@ -39,10 +39,9 @@ class Cart
             
             //insert data into cart
             $result = $this->insertIntoCart($params,$itemcategory);
-             if($result){
+            if($result){
                  //reload the page
                  header("Location:".$_SERVER['PHP_SELF']);
-                
              }
          }
     }
