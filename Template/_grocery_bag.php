@@ -4,7 +4,7 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //cal addToCart method
         $cart->addToCart($_POST['user_id'],$_POST['item_id'],'grocery_bags');
-        echo '<script type="text/javascript">showAlert("cart","Item added to Cart");</script>';
+        //echo '<script type="text/javascript">showAlert("cart","Item added to Cart");</script>';
     }  
 ?>
 

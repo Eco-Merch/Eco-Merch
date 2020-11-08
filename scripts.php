@@ -2,8 +2,8 @@
 <script>
     function showAlert(title,text){
         swal({
-        title: "Cart",
-        text: "Item added to Cart",
+        title: "Order",
+        text: "Ordere Successfull",
         icon: "success",
     });
     }

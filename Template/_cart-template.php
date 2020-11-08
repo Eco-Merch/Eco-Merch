@@ -133,12 +133,12 @@
             <div id="place-order">
                 <form method="POST" action="./checkout.php">
                     <input type="hidden" name="user_id" value="<?php echo 1; ?>"/>
-                    <button id="place-order-btn">
+                    <button class="place-order-btn">
                         PLACE ORDER
                     </button>
                 </form>
             </div>
-        </div>
+        </div>  
             
         <!-- ----------------------------CART ITEM--------------------------- -->
 

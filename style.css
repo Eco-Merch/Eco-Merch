@@ -370,7 +370,8 @@ nav {
 /*---------------------------FOOTER---------------------------------*/
 
 .footer {
-    background: #052b06;
+    background-color: black;
+    /*background: #052b06;*/
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0px 20px;
@@ -854,7 +855,7 @@ input[type=number]::-webkit-outer-spin-button{
 
 
 /* ----------------------------CART PAGE---------------------- */
-.cart-container, .checkout-container{
+.cart-container, #checkout-container{
     width: 85%;
     display: flex;
     margin: 30px auto;
@@ -864,7 +865,7 @@ input[type=number]::-webkit-outer-spin-button{
     font-size: 16px;
     /* border: 1px solid red; */
 }
-.itemAorder_section, .checkout-details{
+.itemAorder_section, .checkout-details {
     flex-basis: 70%;
     position: relative;
     background-color: #fff;
@@ -874,7 +875,7 @@ input[type=number]::-webkit-outer-spin-button{
     /* flex-basis: 70%; */
     background-color: #fff;
     overflow-y: scroll;
-    height: 600px;
+    height: 450px;
     /* border-color: #ddd;   */
     /* border: 1px solid transparent; */
     /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px; */
@@ -996,7 +997,7 @@ input[type=number]::-webkit-outer-spin-button{
 }
 
   
-#place-order-btn{
+.place-order-btn{
     width:30%;
     color:black;
     float:right; 
@@ -1027,7 +1028,42 @@ input[type=number]::-webkit-outer-spin-button{
     font-weight: 500;
 }
 
+/* ----------------------------Checkout Page ------------------------- */
 
+.checkout-detials input{
+
+}
+.price-section{
+
+}
+#address-container {
+    width: 100%;
+    margin-bottom:20px;
+}
+    #address-container input,textarea {
+        width:30%;
+        height:40px;
+        background-color: white;
+        padding:10px;
+        margin:10px 20px;
+    }
+    #addr textarea{
+        width: 65.5%;
+        height:80px;;
+    }
+#addr-title {
+    background-color: #64ab05;
+    margin-bottom: 20px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#order-div button {
+   background-color: #64ab05;
+}
+.place-order{
+    width:200px;
+}
 /* ----------------------------Login/signup----------------- */
 
 .login-header{
@@ -1174,7 +1210,7 @@ section{
      visibility: hidden;
  }
 
- form button{
+#submit, #form1, #form2 button {
     padding: 12px;
     margin-top: 20px;
     max-width: 100px;
@@ -1189,7 +1225,7 @@ section{
     font-weight: 500;
     letter-spacing: 1px;
     transition: transform 80ms ease-in;
- }
+}
 
  .btn-overlay{
     padding: 12px;

@@ -1,4 +1,5 @@
 <?php
+include('scripts.php');
 class Cart
 {
     public $db = null;
@@ -41,7 +42,7 @@ class Cart
             $result = $this->insertIntoCart($params,$itemcategory);
             if($result){
                  //reload the page
-                 header("Location:".$_SERVER['PHP_SELF']);
+                header("Location:".$_SERVER['PHP_SELF']);
              }
          }
     }
@@ -74,6 +75,27 @@ class Cart
                 return $value[$key];
             }, $cartArray);
             return $cart_id;
+        }
+    }
+    public function placeOrder($user_id,$name,$mobile,$address,$pincode,$city){
+        if(isset($user_id) && isset($name)){
+            $result = $this->db->con->query("SELECT * FROM cart WHERE user_id={$user_id}");
+        
+            $resultArray = array();
+
+            //fetch product data one by one
+            while($item = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                $resultArray[] = $item;
+            }
+            
+            foreach($resultArray as $item){
+                $query_string=sprintf("INSERT INTO orders(user_id,item_id,item_category,name,mobile,address,pincode,city) VALUES(%s,%s,'%s','%s',%s,'%s',%s,'%s')",$user_id,$item['item_id'],$item['item_category'],$name,$mobile,$address,$pincode,$city);
+                //$query_string=sprintf("insert into orders(user_id,item_id,name,mobile,address,pincode,city) values(1,1,'a',34,'asdf',23,'asdf')");
+                $result = $this->db->con->query($query_string);
+            }
+            if(isset($result)){
+                echo '<script>showAlert("cart","Item added to Cart");</script>';
+            }
         }
     }
 }

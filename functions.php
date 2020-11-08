@@ -5,8 +5,11 @@
     //Product Class      
     require('database/Product.php');
 
-    //Cart Clss
+    //Cart Class
     require('database/Cart.php');
+
+    //User Class
+    require('database/User.php');
 
     //DBController object
     $db = new DBController();
@@ -16,6 +19,9 @@
 
     //Car object
     $cart = new Cart($db);
+
+    //User object
+    $user = new User($db);
     
 
 ?>
