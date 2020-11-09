@@ -1,4 +1,4 @@
-<?php
+    <?php
     include("header.php");
     $user_id=$_POST['user_id'] ?? 1;
     if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -61,7 +61,7 @@
                     <input type="number" name="pincode" placeholder="Pincode">
                     <input type="text" name="city" placeholder="City">
                     </div>
-                    <button type="submit" name="detail_submit" class="place-order place-order-btn"  >CONFIRM ORDER </button>
+                    <button type="submit" name="detail_submit" class="place-order place-order-btn">CONFIRM ORDER </button>
                 </form>
              </div>
          </div> 

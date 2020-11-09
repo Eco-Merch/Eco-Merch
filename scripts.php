@@ -1,10 +1,10 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    function showAlert(title,text){
+    function showAlert(title,text,status){
         swal({
-        title: "Order",
-        text: "Ordere Successfull",
-        icon: "success",
+        title: title,
+        text: text,
+        icon: status,
     });
     }
 </script>

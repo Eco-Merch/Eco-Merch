@@ -144,19 +144,18 @@
             var loginUsername = document.getElementById('loginUsername');
             var loginPassword = document.getElementById('loginPassword');
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                checkInputs();
-            })
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     checkInputs();
+            // })
 
             form2.addEventListener('submit', (evt) => {
                 evt.preventDefault();
-
                 checkLoginInputs();
             })
 
             function checkInputs() {
+                
                 var usernameValue = username.value.trim();
                 var emailValue = email.value.trim();
                 var passwordValue = password.value.trim();
@@ -199,8 +198,7 @@
                     setSuccessFor(password2);
 
                 }
-
-
+                
 
             }
 

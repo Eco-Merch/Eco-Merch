@@ -11,8 +11,16 @@ class User
     }
 
     public function addUser($username,$email,$password){
-        $result = $this->db->con->query("INSERT INTO user(username,email,password) VALUES('{$username}','{$email}','$password')");
-        echo '<script>echo alert("hello");</script>';
+        $res = $this->db->con->query("SELECT * from user WHERE username='{$username}'");
+        $row = mysqli_num_rows($res);
+        
+        if($row == 1){
+            // echo '<script>alert("Username already exist");</script>';
+            echo '<script>showAlert("Sign up","Username Already Exist","error");</script>';
+        }else{
+            $result = $this->db->con->query("INSERT INTO user(username,email,password) VALUES('{$username}','{$email}','{$password}')");
+            echo '<script>showAlert("Sign up","Account created Login to Continue","success");</script>';
+        }
     }
     //fetch product data
 

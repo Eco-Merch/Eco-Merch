@@ -94,7 +94,7 @@ class Cart
                 $result = $this->db->con->query($query_string);
             }
             if(isset($result)){
-                echo '<script>showAlert("cart","Item added to Cart");</script>';
+                echo '<script>showAlert("Order","Order Successfull","success");</script>';
             }
         }
     }
