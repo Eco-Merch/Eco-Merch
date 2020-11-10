@@ -34,9 +34,7 @@ body{
     margin-right: 20px;
     margin-left: 20px;
 }
-.cart{
-    /* position: relative; */
-}
+
 .cart span{
     position: relative;
     width: 20px;
@@ -1446,8 +1444,11 @@ textarea{
     max-width: 600px;
 }
 
+/* ----------------------------about us----------------------------------- */
 
-
+.about-container .home-bottom{
+    padding-bottom: 120px;
+}
 
 
 
