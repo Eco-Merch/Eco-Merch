@@ -2,7 +2,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // echo $_POST['remove_item_submit'];
         if(isset($_POST['remove_item_submit'])){
-            $deleted_item = $cart->removeCartItem($_POST['item_id']);
+            $deleted_item = $cart->removeCartItem($_SESSION['user_id'],$_POST['item_id'],$_POST['item_category']);
         }
         
     }
@@ -25,6 +25,7 @@
                     <col span="1" style="width: 25%;">
                     <col span="1" style="width: 30%;">
                     </colgroup>
+
                     <?php if($count >=1){ ?>
                     <thead>
                         <tr>
@@ -33,7 +34,13 @@
                             <th>Pirce</th>
                         </tr>
                     </thead>
-                <?php } ?>
+                    
+                    <?php }else{ ?>
+                    <h1 align="center" style="margin-top:40px;">Cart is Empty</h1>
+                    <img src="./images/empty_cart.svg" style="height:50%;display:block;margin:40px auto; ">
+                     <?php } ?>
+
+
                     <?php
                     //get item_id and item_category from cart table
                     $sum = 0;
@@ -43,7 +50,9 @@
                         //get details of product
                         // $count++;
                         $cart = $product->getCartProduct($item['item_id'],$item['item_category']);
-                        $subTotal = array_map(function($item){
+                        $item_category = $item['item_category'];
+                        
+                        $subTotal = array_map(function($item) {
                     ?> 
                     <tbody>
                         <tr class="items-row">
@@ -79,9 +88,9 @@
                                         <div class="remove-item" onclick="this.parentNode.submit();">
                                             <input type="hidden" name="remove_item_submit" />
                                             <input type="hidden" name="item_id" value="<?php echo $item["item_id"];?>"/>
+                                            <input type="hidden" name="item_category" value="<?php echo  $GLOBALS['item_category'];?>"/>
                                             <i class="fa fa-trash-o" aria-hidden="true"></i >
                                             <span>REMOVE</span>
-                                            
                                         </div>
                                     </form>
                                 </div>
@@ -89,13 +98,13 @@
                             <td>
                                 <div class="price-col">
                                     <div style="margin: -2px 0 0;">
-                                        <span class="item-price"><i class="fas fa-rupee-sign"></i>515</span>
+                                        <!-- <span class="item-price"><i class="fas fa-rupee-sign"></i>515</span> -->
                                         <div class="gstPrice-det">
-                                            <div class="row-4">
+                                            <div class="row-4" style="justify-content:center;">
                                                 <span class="price-txt">Price per piece</span>
                                                 <span class="price-val"><i class="fas fa-rupee-sign"></i><?php echo $item['item-price'] ?? 0 ?></span>
                                             </div>
-                                            <div class="row-4">
+                                            <!-- <div class="row-4">
                                                 <span class="price-txt">Price</span>
                                                 <span class="price-val"><i class="fas fa-rupee-sign"></i>500</span>
                                             </div>
@@ -106,7 +115,7 @@
                                             <div class="row-4">
                                                 <span class="price-txt">Final Price</span>
                                                 <span class="price-val"><i class="fas fa-rupee-sign"></i>515</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     <!-- <span>Price per piece</span>
@@ -134,7 +143,8 @@
             <div id="place-order">
                 <form method="post" action="./checkout.php">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"/>
-                    <button class="place-order-btn">
+                    <input type="hidden" name="sum" value="<?php echo $sum ?>"/>
+                    <button name="place_order_submit" class="place-order-btn">
                         PLACE ORDER
                     </button>
                 </form>

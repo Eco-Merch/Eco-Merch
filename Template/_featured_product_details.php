@@ -1,12 +1,12 @@
 <?php
 $item_id = $_GET['item_id'] ?? 1;
-foreach($product->getProductData('grocery_bags') as $item):
+foreach($product->getProductData('featured_products') as $item):
     if($item['item_id'] == $item_id):
 
     //add item to cart
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //cal addToCart method
-        $cart->addToCart($_SESSION['user_id'],$_POST['item_id'],'grocery_bags');
+        $cart->addToCart($_SESSION['user_id'],$_POST['item_id'],'featured_products');
         echo '<script type="text/javascript">showAlert("cart","Item added to Cart");</script>';
     }
 ?>
@@ -73,7 +73,7 @@ foreach($product->getProductData('grocery_bags') as $item):
                     <form method="POST">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
                     <?php
-                        if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart',$_SESSION['user_id'] ?? 0,'grocery_bags')) ?? [])){
+                        if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart',$_SESSION['user_id'] ?? 0,'featured_products')) ?? [])){
                             echo '<button type="button" class="disable-btn cart-btn">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             In Cart

@@ -37,9 +37,9 @@ class Product
             return $resultArray;
         }
 
-    //get cart data to check item is present in cart table [with item_category condition]
-    public function getCartTableData($table_name,$item_category){
-    $result = $this->db->con->query("SELECT * FROM {$table_name} WHERE item_category='{$item_category}'");
+    //get cart data to check item is present in cart table [with user_id and item_category condition]
+    public function getCartTableData($table_name,$user_id,$item_category){
+    $result = $this->db->con->query("SELECT * FROM {$table_name} WHERE user_id = '{$user_id}' and item_category='{$item_category}'");
 
     $resultArray = array();
 

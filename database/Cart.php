@@ -42,15 +42,18 @@ class Cart
             if($result){
                  //reload the page
                 //header("Location:".$_SERVER['PHP_SELF']);
+                echo '<script>showAlert("Cart","Item added to cart","success");</script>';
                 header("Location:".$_SERVER['PHP_SELF']);
              }
          }
     }
 
     //remove cart item 
-    public function removeCartItem($itemid = null, $table = 'cart'){
+    public function removeCartItem($userid, $itemid = null, $itemcategory, $table = 'cart'){
+        echo $userid,$itemid,$itemcategory;
         if($itemid != null){
-        $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id = {$itemid}");
+        $result = $this->db->con->query("DELETE FROM {$table} WHERE user_id = '{$userid}' and item_id = '{$itemid}' and item_category = '{$itemcategory}'");
+        print_r($result);
         if($result){
             header("Location:".$_SERVER['PHP_SELF']);
         }
@@ -77,10 +80,9 @@ class Cart
             return $cart_id;
         }
     }
-    public function placeOrder($user_id,$name,$mobile,$address,$pincode,$city){
+    public function placeOrder($user_id,$name,$price,$mobile,$address,$pincode,$city){
         if(isset($user_id) && isset($name)){
             $result = $this->db->con->query("SELECT * FROM cart WHERE user_id='{$user_id}'");
-            echo $user_id;
             $resultArray = array();
 
             //fetch product data one by one
@@ -89,14 +91,18 @@ class Cart
             }
             //print_r($resultArray);
             foreach($resultArray as $item){
-                $query_string=sprintf("INSERT INTO orders(user_id,item_id,item_category,name,mobile,address,pincode,city) VALUES(%s,%s,'%s','%s',%s,'%s',%s,'%s')",$user_id,$item['item_id'],$item['item_category'],$name,$mobile,$address,$pincode,$city);
-                //$query_string=sprintf("insert into orders(user_id,item_id,name,mobile,address,pincode,city) values(1,1,'a',34,'asdf',23,'asdf')");
+                // echo $user_id,$item['item_id'];
+                // echo $name,$price,$mobile,$address,$pincode,$city;
+                echo $item['item_category'];
+                //$query_string=sprintf("INSERT INTO orders(user_id,item_id,item_category,name,item_price,mobile,address,pincode,city) VALUES(%s,%s,'%s','%s',%s,%s,%s,'%s',%s,'%s')",$user_id,$item['item_id'],$item['item_category'],$name,$price,$mobile,$address,$pincode,$city);
+                //$query_string=sprintf("insert into orders(user_id,item_id,item_category,name,item_price,mobile,address,pincode,city) values(%s,%s,'%s','%s',%s,%s,'%s',%s,'%s')",$user_id,$item['item_id'],$item['item_category'],$name,$price,$mobile,$address,$pincode,$city);
+                $query_string=sprintf("insert into orders(user_id,item_id,item_category,name,item_price,mobile,address,pincode,city) values(%s,%s,'%s','%s',%s,%s,'%s',%s,'%s')",$user_id,$item['item_id'],$item['item_category'],$name,$price,$mobile,$address,$pincode,$city);
                 $result = $this->db->con->query($query_string);
             }
             if(isset($result)){
-                //$this->db->con->query("DELETE FROM cart");
-                header("Location:./cart.php");
-                echo '<script>showAlert("Order","Order Successfull","success");</script>';
+                $this->db->con->query("DELETE FROM cart");
+                //echo '<script>showAlert("Order","Order Successfull","success");</script>';
+                header("Location:./cart.php?order=true");
             }
         }
     }

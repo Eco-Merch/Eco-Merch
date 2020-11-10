@@ -1,12 +1,16 @@
     <?php
     session_start();
     include("header.php");
-    
+    require('scripts.php');
+
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        if(isset($_POST['detail_submit'])){
+        if(isset($_POST['place_order_submit'])){
+            $sum=$_POST['sum'];
+        }
+        if(isset($_POST['confirm_submit'])){
             if($_POST['name']!=null && $_POST['mobile']!=null && $_POST['address']!=null && $_POST['pincode']!=null && $_POST['city']!=null){
                 $user_id=$_SESSION['user_id'];    
-                $cart->placeOrder($user_id,$_POST['name'],$_POST['mobile'],$_POST['address'],$_POST['pincode'],$_POST['city']);
+                $cart->placeOrder($user_id,$_POST['name'],$_POST['sum'],$_POST['mobile'],$_POST['address'],$_POST['pincode'],$_POST['city']);
             }else{
                 echo '<script>showAlert("Order","Fill all details","warning");</script>';
             }
@@ -66,7 +70,8 @@
                     <input type="number" name="pincode" placeholder="Pincode">
                     <input type="text" name="city" placeholder="City">
                     </div>
-                    <button type="submit" name="detail_submit" class="place-order place-order-btn">CONFIRM ORDER </button>
+                    <input type="hidden" name="sum" value="<?php echo $sum ?>"/>
+                    <button type="submit" name="confirm_submit" class="place-order place-order-btn">CONFIRM ORDER </button>
                 </form>
              </div>
          </div> 
@@ -77,7 +82,7 @@
         </div>
         <div class="price-detail">
             <div class="subtotal">
-                <p>Price (<span><?php  echo $count ?? 0;?></span> items)</p>
+                <p>Price (<span><?php echo count($product->getCartTableDataUser('cart',$_SESSION['user_id'] ?? 0)); ?></span> items)</p>
                 <span><i class="fas fa-rupee-sign"></i><?php echo $sum ?? 0; ?></span>
             </div>
             <div class="dlvry-charges">

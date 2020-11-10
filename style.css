@@ -790,6 +790,7 @@ input[type=number]::-webkit-outer-spin-button{
     background-color: #64ab05;
     padding: 10px 15px; 
     outline:none;
+    margin-left: 70px;
     cursor: pointer;
 }
 .cart-btn{
@@ -875,7 +876,7 @@ input[type=number]::-webkit-outer-spin-button{
     /* flex-basis: 70%; */
     background-color: #fff;
     overflow-y: scroll;
-    height: 450px;
+    height: 600px;
     /* border-color: #ddd;   */
     /* border: 1px solid transparent; */
     /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px; */
@@ -972,7 +973,8 @@ input[type=number]::-webkit-outer-spin-button{
     margin: 5px 0px;
     padding: 7px 11px 5px;
     /* color: red; */
-    display: table;
+    display:flex;
+    /* display: table;  */
     /* width: 224px; */
     width: 100%;
 }
@@ -980,11 +982,13 @@ input[type=number]::-webkit-outer-spin-button{
     display: table-row;
 }
 .price-txt{
-
+    /* margin-top: 5px;  */
 }
 .price-val{
-    display: table-cell;
-    text-align: right;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    
 }
 /* -------------------------------Place Order ----------------------------- */
  #place-order{

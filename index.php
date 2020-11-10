@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('header.php');
+include('scripts.php');
 
 if($_SERVER['REQUEST_METHOD'] == "GET"){
     if(isset($_GET['login'])){ 

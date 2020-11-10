@@ -7,20 +7,21 @@
             //$res = $user->loginUser($username,$_POST['password']);
             list($res,$user_id) = $user->loginUser($username,$_POST['password']);
             if($res==1){
-                session_start();
                 $_SESSION['user_id'] = $user_id;
                 echo '<script>location.href="index.php?login=true";</script>';
 
             }else{
+                include('scripts.php');
                 echo '<script>showAlert("Login","Enter valid username and password","error");</script>';
             }
             
         }
+        
     }
 ?>
 
 <div class="form-container signin-container">
-    <form method="post" action="#" id="form2">
+    <form method="post" id="form2">
         <h2>Login</h2>
         <div class="input-container">
             <input type="text" name="username" placeholder="Username" id="loginUsername">

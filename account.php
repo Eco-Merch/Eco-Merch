@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
 
-    <?php require('functions.php'); 
-        include('scripts.php');
+    <?php include('functions.php'); 
+        require('scripts.php');
+        session_start();
     ?>
 </head>
 

@@ -12,8 +12,9 @@
         <div class="row">
             <?php foreach ($product_data as $item)  {?>
             <div class="col-4">
+                <a href = '<?php printf('%s?item_id=%s','featured_product_details.php',$item['item_id']); ?>'; style="color:black;">
                 <img src="<?php echo $item['item-img'] ?>" />
-                <h4><?php $item['item-name'] ?></h4>
+                <h4><?php echo $item['item-name'] ?></h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -21,11 +22,12 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                 </div>
                 <p>₹<?php echo $item['item-price']?></p>
+                </a>
                 <form method="post">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
                     
                     <?php
-                        if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart','featured_products')) ?? [])){
+                        if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart',$_SESSION['user_id'] ?? 0,'featured_products')) ?? [])){
                             echo '<a class="btn disable-btn">In cart</a>';
                         }else{
                             if(isset($_SESSION['user_id'])){

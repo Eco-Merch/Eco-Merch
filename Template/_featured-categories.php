@@ -4,7 +4,7 @@
     <div class="small-container">
         <div class="categories">
             <h1>Featured Categories</h1>
-            <div class="row">
+            <div class="row" onclick="location.href='grocery_bag.php';">
                 <?php foreach ($product_data as $item)  {?>
                 <div class="col-3" onclick = "onclickbuttun()">
                     <img src="<?php echo $item['item-img'] ?>">
@@ -13,4 +13,6 @@
                 <?php } //closing foreach function?>
             </div>
         </div>
+
+
     </div>

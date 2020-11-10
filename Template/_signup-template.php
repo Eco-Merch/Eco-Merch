@@ -8,6 +8,9 @@
             }
         }
     }
+    
+    include('scripts.php');
+        
 ?> 
 
 <div class="form-container signup-container">

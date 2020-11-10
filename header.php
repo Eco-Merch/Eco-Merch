@@ -16,7 +16,6 @@
 
     <?php
         require('functions.php');
-
     ?>
     
 </head>

@@ -2,13 +2,6 @@
 <?php
     session_start();
     include('header.php');
-    include('scripts.php');
-    if($_SERVER['REQUEST_METHOD'] == "GET"){
-        if(isset($_GET['order'])){
-            echo '<script>showAlert("Order","Order Successfull","success");</script>';
-        }
-    }
-    //echo '<script>showAlert("Order","Order Successfull","success");</script>';
 ?>
         <!-- ---------------------small-nav---------------------------------------------------->
         <div class="nav-container">
@@ -42,16 +35,19 @@
             </div>
         </div>
     </div>
-
-    <!-- -------------------------------CART Items------------------------------------>
-   <?php
-        include('Template/_cart-template.php');
-    ?>
-   
     
+   <?php
+        //-----------------------Product Details------------------------------------------
+        include('Template/_featured_product_details.php');
+
+        //----------------------Grocery Products | Related Products------------------------
+        include('Template/_related-products.php');
+   ?>
+
 
 <!--------------------------------FOOTER----------------------------------------------->
 
 <?php
     include('footer.php');
 ?>
+

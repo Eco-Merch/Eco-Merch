@@ -17,13 +17,13 @@
                         <img src="<?php echo $item['item-img']?>" alt="">
                         <div class="text-area">
                             <h4><?php echo $item['item-name'] ?></h4>
-                            <p>₹40 Per Piece</p>
+                            <p>₹<?php echo $item['item-price']?> Per Piece</p>
                             <p>Min. Order 20</p>
                             </div></a>
                             <form name='grocery_bag_submit' method="post">
                                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
                                 <?php
-                                    if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart','grocery_bags')) ?? [])){
+                                    if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart',$_SESSION['user_id'] ?? 0, 'grocery_bags')) ?? [])){
                                         echo '<a class="btn disable-btn">In cart</a>';
                                     }else{
                                         if(isset($_SESSION['user_id'])){
