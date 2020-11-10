@@ -35,8 +35,8 @@
                     </label>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Articles</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <!-- <li><a href="#">Articles</a></li> -->
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </nav>
@@ -45,7 +45,7 @@
                     <span id="cart_count"><?php echo count($product->getCartTableDataUser('cart',$_SESSION['user_id'] ?? 0));?></span>
                     <?php 
                     if(isset($_SESSION['user_id'])){?>
-                        <a href="logout.php">LOGOUT</a>
+                        <a href="logout.php"><img src="images/log-out.png" style="height:40px; width:45px;" /></a>
                     <?php }else{ ?>
                         <a href="account.php"><img src="images/account.png" style="height:40px; width:45px;" /></a>
                     <?php } ?>

@@ -11,7 +11,6 @@ window.onscroll = function () { scrollFunction() };
 
 var slideIndex = 0;
         showslides();
-
         function showslides() {
             var i;
             var slides = document.getElementsByClassName("myslides");
@@ -102,22 +101,22 @@ $(document).ready(function(){
  
   });
 
-  window.onscroll = function () { scrollFunction() };
-  function scrollFunction() {
-      if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200) {
-          document.getElementById("container").style.padding = "0px";
-          document.getElementById("logo").style.width = "100px";
-          x = document.getElementsByClassName("price-section")[0];
-          x.style.position = "sticky";
-          x.style.top = "130px";
-          // document.getElementsByClassName("price-section")[0].style.position = "sticky";
-          // document.getElementsByClassName("price-section")[0].style.top = "200px";
-      } else {
-          document.getElementById("container").style.padding = "10px 10px";
-          document.getElementById("logo").style.width = "120px";
-          x = document.getElementsByClassName("price-section")[0];
-          x.style.position = "sticky";
-          x.style.top = "164px";
+//   window.onscroll = function () { scrollFunction() };
+//   function scrollFunction() {
+//       if (document.body.scrollTop >= 200 || document.documentElement.scrollTop >= 200) {
+//           document.getElementById("container").style.padding = "0px";
+//           document.getElementById("logo").style.width = "100px";
+//           x = document.getElementsByClassName("price-section")[0];
+//           x.style.position = "sticky";
+//           x.style.top = "130px";
+//           // document.getElementsByClassName("price-section")[0].style.position = "sticky";
+//           // document.getElementsByClassName("price-section")[0].style.top = "200px";
+//       } else {
+//           document.getElementById("container").style.padding = "10px 10px";
+//           document.getElementById("logo").style.width = "120px";
+//           x = document.getElementsByClassName("price-section")[0];
+//           x.style.position = "sticky";
+//           x.style.top = "164px";
           
-      }
-  }
+//       }
+//   }

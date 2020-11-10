@@ -94,7 +94,7 @@ class Cart
                 $result = $this->db->con->query($query_string);
             }
             if(isset($result)){
-                //$this->db->con->query("DELETE FROM cart");
+                $this->db->con->query("DELETE FROM cart");
                 header("Location:./cart.php");
                 echo '<script>showAlert("Order","Order Successfull","success");</script>';
             }
