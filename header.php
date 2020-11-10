@@ -16,6 +16,7 @@
 
     <?php
         require('functions.php');
+
     ?>
     
 </head>
@@ -41,8 +42,13 @@
                 </nav>
                 <div class="cart">
                     <a href="cart.php" ><img src="images/bag.png" style="height:40px; width:50px;" /></a>
-                    <span id="cart_count"><?php echo count($product->getProductData('cart'));?></span>
-                    <a href="login.php"><img src="images/account.png" style="height:40px; width:45px;" /></a>
+                    <span id="cart_count"><?php echo count($product->getCartTableDataUser('cart',$_SESSION['user_id'] ?? 0));?></span>
+                    <?php 
+                    if(isset($_SESSION['user_id'])){?>
+                        <a href="logout.php">LOGOUT</a>
+                    <?php }else{ ?>
+                        <a href="account.php"><img src="images/account.png" style="height:40px; width:45px;" /></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

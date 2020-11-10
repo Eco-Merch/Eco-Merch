@@ -1,8 +1,11 @@
 <?php 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        if(isset($_POST['signup_submit'])){ 
-            $user->addUser($_POST['username'],$_POST['email'],$_POST['password']);
-            
+        if(isset($_POST['signup_submit'])){
+            if($_POST['username']!=null && $_POST['email']!=null && $_POST['password']!=null){
+                $user->addUser($_POST['username'],$_POST['email'],$_POST['password']);  
+            }else{
+                echo '<script>showAlert("Sign up","Fill all details","warning");</script>';
+            }
         }
     }
 ?> 

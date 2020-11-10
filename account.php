@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c61cdb8776.js" crossorigin="anonymous"></script>
 
-    <?php require('functions.php'); ?>
+    <?php require('functions.php'); 
+        include('scripts.php');
+    ?>
 </head>
 
 <body id="body">
@@ -33,36 +35,19 @@
                     </nav>
                     <div class="cart">
                         <a href="cart.php"><img src="images/bag.png" style="height:40px; width:50px;" /></a>
-                        <a href="login.php"><img src="images/account.png" style="height:40px; width:45px;" /></a>
+                        <a href="account.php"><img src="images/account.png" style="height:40px; width:45px;" /></a>
                     </div>
                 </div>
             </div>
 
+            <?php include('checkLogin.php');?>
             <!-- -----------------------------LOGIN/SIGNUP--------------------------------------- -->
 
             <section>
                 <div class="logincontainer" id="logincontainer">
                     <?php include("Template/_signup-template.php"); ?>
-                    <div class="form-container signin-container">
-                        <form action="#" id="form2">
-                            <h2>Login</h2>
-                            <div class="input-container">
-                                <input type="text" name="name" placeholder="Username" id="loginUsername">
-                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="input-container">
-                                <input type="password" name="password" placeholder="Password" id="loginPassword">
-                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <i class="fa fa-eye" aria-hidden="true" onclick="showPassword();"></i>
-                                <small>error message</small>
-                            </div>
-                            <a href="#">Forgot your Password?</a>
-                            <button>Login</button>
-                        </form>
-                    </div>
+                    
+                    <?php include("Template/_login-template.php"); ?>
 
                     <div class="overlay-container">
                         <div class="overlay">
@@ -149,10 +134,10 @@
             //     checkInputs();
             // })
 
-            form2.addEventListener('submit', (evt) => {
-                evt.preventDefault();
-                checkLoginInputs();
-            })
+            // form2.addEventListener('submit', (evt) => {
+            //     evt.preventDefault();
+            //     checkLoginInputs();
+            // })
 
             function checkInputs() {
                 

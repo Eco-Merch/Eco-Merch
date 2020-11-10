@@ -1,6 +1,13 @@
 <?php
-ob_start();
+session_start();
 include('header.php');
+
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+    if(isset($_GET['login'])){ 
+        echo '<script>showAlert("Login","Login Successfull","success");</script>';       
+    }
+}
+ob_start();
 
 ?>
 <!-- ---------------------small-nav---------------------------------------------------->

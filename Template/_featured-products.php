@@ -3,7 +3,7 @@
     //request post method;
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //cal addToCart method
-        $cart->addToCart($_POST['user_id'],$_POST['item_id'],'featured_products');
+        $cart->addToCart($_SESSION['user_id'],$_POST['item_id'],'featured_products');
          
     }  
 ?>
@@ -23,12 +23,16 @@
                 <p>₹<?php echo $item['item-price']?></p>
                 <form method="post">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
-                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                    
                     <?php
                         if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart','featured_products')) ?? [])){
                             echo '<a class="btn disable-btn">In cart</a>';
                         }else{
-                            echo '<a class="btn" name="grocery_bag_submit" onclick="this.parentNode.submit();">Add to cart</a>';
+                            if(isset($_SESSION['user_id'])){
+                                echo '<a class="btn" name="grocery_bag_submit" onclick="this.parentNode.submit();">Add to cart</a>';
+                            }else{
+                                echo '<a class="btn" name="grocery_bag_submit" href="account.php?login=false">Add to cart</a>';
+                            }
                         }
                     ?>
                 </form>

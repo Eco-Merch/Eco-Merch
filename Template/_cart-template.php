@@ -3,10 +3,10 @@
         // echo $_POST['remove_item_submit'];
         if(isset($_POST['remove_item_submit'])){
             $deleted_item = $cart->removeCartItem($_POST['item_id']);
-            }
+        }
         
     }
-    $count = count($product->getProductData('cart'));
+    $count = count($product->getCartTableDataUser('cart',$_SESSION['user_id'] ?? 0));
 
 ?>
 
@@ -38,7 +38,8 @@
                     //get item_id and item_category from cart table
                     $sum = 0;
                     // $count = 0; // to avoid printing Item Quantity and Price multiple times
-                    foreach($product->getProductData('cart') as $item):
+                      
+                    foreach($product->getCartTableDataUser('cart',$_SESSION['user_id'] ?? 0) as $item):
                         //get details of product
                         // $count++;
                         $cart = $product->getCartProduct($item['item_id'],$item['item_category']);
@@ -131,8 +132,8 @@
             
             </div>
             <div id="place-order">
-                <form method="POST" action="./checkout.php">
-                    <input type="hidden" name="user_id" value="<?php echo 1; ?>"/>
+                <form method="post" action="./checkout.php">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"/>
                     <button class="place-order-btn">
                         PLACE ORDER
                     </button>

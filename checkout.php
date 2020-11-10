@@ -1,11 +1,16 @@
     <?php
+    session_start();
     include("header.php");
-    $user_id=$_POST['user_id'] ?? 1;
+    
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['detail_submit'])){
-        $cart->placeOrder($user_id,$_POST['name'],$_POST['mobile'],$_POST['address'],$_POST['pincode'],$_POST['city']);
+            if($_POST['name']!=null && $_POST['mobile']!=null && $_POST['address']!=null && $_POST['pincode']!=null && $_POST['city']!=null){
+                $user_id=$_SESSION['user_id'];    
+                $cart->placeOrder($user_id,$_POST['name'],$_POST['mobile'],$_POST['address'],$_POST['pincode'],$_POST['city']);
+            }else{
+                echo '<script>showAlert("Order","Fill all details","warning");</script>';
+            }
         }
-        
     }
 ?>
 <div class="nav-container">

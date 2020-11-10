@@ -10,7 +10,7 @@ class Product
         $this->db = $db;
     }
 
-    //fetch product data
+    //fetch product data for any table
     public function getProductData($table_name){
         $result = $this->db->con->query("SELECT * FROM {$table_name}");
         
@@ -20,16 +20,30 @@ class Product
         while($item = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             $resultArray[] = $item;
         }
+        
         return $resultArray;
     }
 
-    //to check item is present in cart table
+    //get cart data [with user_id condition] to show only the current user's data
+    public function getCartTableDataUser($table_name,$user_id){
+        $result = $this->db->con->query("SELECT * FROM {$table_name} WHERE user_id='{$user_id}'");
+    
+        $resultArray = array();
+    
+        //fetch data one by one
+            while($item = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                $resultArray[] = $item;
+            }
+            return $resultArray;
+        }
+
+    //get cart data to check item is present in cart table [with item_category condition]
     public function getCartTableData($table_name,$item_category){
     $result = $this->db->con->query("SELECT * FROM {$table_name} WHERE item_category='{$item_category}'");
 
-        $resultArray = array();
+    $resultArray = array();
 
-    //fetch product data one by one
+    //fetch data one by one
         while($item = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             $resultArray[] = $item;
         }

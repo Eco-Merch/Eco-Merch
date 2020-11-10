@@ -6,7 +6,7 @@ foreach($product->getProductData('grocery_bags') as $item):
     //add item to cart
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         //cal addToCart method
-        $cart->addToCart($_POST['user_id'],$_POST['item_id'],'grocery_bags');
+        $cart->addToCart($_SESSION['user_id'],$_POST['item_id'],'grocery_bags');
         echo '<script type="text/javascript">showAlert("cart","Item added to Cart");</script>';
     }
 ?>
@@ -72,18 +72,24 @@ foreach($product->getProductData('grocery_bags') as $item):
                 <div id="cart-buy-container">
                     <form method="POST">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1;?>">
-                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                     <?php
                         if(in_array($item['item_id'],$cart->getCartId($product->getCartTableData('cart','grocery_bags')) ?? [])){
-                            echo '<button class="disable-btn cart-btn">
+                            echo '<button type="button" class="disable-btn cart-btn">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             In Cart
                         </button>';
-                        }else{
-                            echo '<button class="cart-btn" name="add_cart_submit" type=submit>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            ADD TO CART
-                        </button>';
+                        }else{   
+                            if(isset($_SESSION['user_id'])){
+                                echo '<button class="cart-btn" name="add_cart_submit" type=submit>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                ADD TO CART
+                                </button>';
+                            }else{
+                                echo '<a href="account.php?login=false"><button type="button" class="cart-btn">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                ADD TO CART
+                                </button></a>';
+                            }
                         }
                     ?>
                     <!-- <button class="cart-btn">
